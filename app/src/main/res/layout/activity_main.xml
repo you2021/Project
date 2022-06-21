@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/notebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="노트북 관리"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_btn"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom"
+        app:layout_constraintTop_toBottomOf="@id/notebook">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="컴퓨터명"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineOne"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_btn"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@id/lineOne"
+            app:layout_constraintLeft_toRightOf="@id/name"
+            app:layout_constraintRight_toRightOf="@id/center"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/serial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="시리얼"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineOne"
+            app:layout_constraintLeft_toLeftOf="@id/center"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etSerial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_btn"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@id/lineOne"
+            app:layout_constraintLeft_toRightOf="@id/serial"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용자"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineTwo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lineOne" />
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_btn"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@id/lineTwo"
+            app:layout_constraintLeft_toRightOf="@id/name"
+            app:layout_constraintRight_toRightOf="@id/center"
+            app:layout_constraintTop_toTopOf="@id/lineOne" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="등록일"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineTwo"
+            app:layout_constraintLeft_toLeftOf="@id/center"
+            app:layout_constraintTop_toTopOf="@id/lineOne" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="0000-00-00"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineTwo"
+            app:layout_constraintLeft_toRightOf="@id/date"
+            app:layout_constraintTop_toTopOf="@id/lineOne" />
+
+        <ImageView
+            android:id="@+id/clickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/img_date"
+            app:layout_constraintBottom_toBottomOf="@id/lineTwo"
+            app:layout_constraintLeft_toRightOf="@id/txtDate"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lineOne"
+            android:clickable="true"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="01" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="상태"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/lineThree"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lineTwo" />
+
+        <LinearLayout
+            android:id="@+id/checkbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="@id/lineThree"
+            app:layout_constraintLeft_toRightOf="@id/state"
+            app:layout_constraintRight_toRightOf="@id/lineState"
+            app:layout_constraintTop_toTopOf="@id/lineTwo">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전체"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="정상" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="수리중" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="검색"
+            app:layout_constraintBottom_toBottomOf="@id/lineThree"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        app:layout_constraintTop_toBottomOf="@id/searchBox"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/one"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/three"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/one"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="컴퓨터명"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one"
+                    app:layout_constraintLeft_toLeftOf="@id/one"
+                    app:layout_constraintRight_toRightOf="@id/two"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시리얼"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one"
+                    app:layout_constraintLeft_toRightOf="@id/two"
+                    app:layout_constraintRight_toRightOf="@id/three"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상태"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one"
+                    app:layout_constraintLeft_toRightOf="@id/three"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/tittle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tittle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/data"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/one_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/one_one" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_two" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/three_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/three_three" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h_one_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="1" />
+
+<!--                <CheckBox-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="@id/one_one"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <EditText
+                    android:id="@+id/edTxtCom_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one_one"
+                    app:layout_constraintLeft_toLeftOf="@id/one_one"
+                    app:layout_constraintRight_toRightOf="@id/two_two"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edTxtSerial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_two"
+                    app:layout_constraintRight_toRightOf="@id/three_three"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edTxtState"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/h_one_one"
+                    app:layout_constraintLeft_toRightOf="@id/three_three"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/lineVisible"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/ed"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/tittle_two"
+                app:layout_constraintLeft_toLeftOf="@id/line1"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tittle_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ed">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_one" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_two_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.3" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_two_" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_three" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_fore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_fore" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_h_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구분"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one"
+                    app:layout_constraintLeft_toLeftOf="@id/two_one"
+                    app:layout_constraintRight_toRightOf="@id/two_two_"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_two_"
+                    app:layout_constraintRight_toRightOf="@id/two_three"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="등록일"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_three"
+                    app:layout_constraintRight_toRightOf="@id/two_fore"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="수정일"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_fore"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/tittle_two"
+                app:layout_constraintLeft_toLeftOf="@id/line1"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/data_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tittle_two" />
+
+
+<!--            edit -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ed_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/data_two"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_one_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_one_one" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_two_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.3" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_two_two" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_three_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/two_three_three" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fore_fore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@id/fore_fore" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/two_h_one_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="1" />
+
+                <EditText
+                    android:id="@+id/edTextType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one_one"
+                    app:layout_constraintLeft_toLeftOf="@id/two_one_one"
+                    app:layout_constraintRight_toRightOf="@id/two_two_two"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edTxtUser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_two_two"
+                    app:layout_constraintRight_toRightOf="@id/two_three_three"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/edTxtDt_reg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one_one"
+                    app:layout_constraintLeft_toRightOf="@id/two_three_three"
+                    app:layout_constraintRight_toRightOf="@id/fore_fore"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/edTxtDt_cor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/two_h_one_one"
+                    app:layout_constraintLeft_toRightOf="@id/fore_fore"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/edTextType"
+                    app:layout_constraintLeft_toLeftOf="@id/two_one_one"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="추가"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="삭제"/>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="저장"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
